@@ -25,7 +25,7 @@ public class recursividade {
     public static int fibonacci(int n){
 
         //Indicação de quanto a função deve terminar
-        if (n < 2)
+        if (n <= 2)
             return 1;
         
         //recursividade
@@ -49,6 +49,23 @@ public class recursividade {
         return n + somatorio(n-1); 
     }
 
+    //procedimento para printar a primeira linha
+    public static void linhaCaractere(int x){
+        int i;
+        for(i=0;i<x;i++){
+            System.out.printf("*");
+        }
+        System.out.println();
+    }
+    
+    //função recursiva decrementando os prints
+    public static void trianguloRec(int n){
+        if(n<0){
+            linhaCaractere(n);
+            trianguloRec(n-1);
+        }
+    }
+
     //----------------------------------------------------------------------
     //saidas
     public static void main(String[] args){
@@ -66,6 +83,9 @@ public class recursividade {
 
         //saída função recursiva somatorio
         System.out.printf("Somatório de %d = %d", n ,somatorio(n));
+
+        //saída triângulo caractere
+        trianguloRec(n);
     }
 
 }
